@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusAI - Advanced AI Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <!-- Side Menu -->
+    <div class="side-menu" id="side-menu">
+        <div class="menu-header">
+            <div class="menu-title">Menu</div>
+            <button class="close-menu" id="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="menu-item">
+            <i class="fas fa-history"></i>
+            <span>Chat History</span>
+        </div>
+        
+        <div class="menu-item">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+        </div>
+        
+        <div class="menu-item" id="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <span>Dark Mode</span>
+        </div>
+        
+        <div class="menu-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </div>
+        
+        <div class="menu-item">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </div>
+        
+        <div class="menu-item">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <!-- File Upload Modal -->
+    <div class="modal" id="file-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-title">Upload File</div>
+            <input type="file" id="file-input" style="display: none;">
+            <button class="control-btn" id="select-file-btn">
+                <i class="fas fa-folder-open"></i> Select File
+            </button>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-left">
+            <i class="header-icon fas fa-bars" id="menu-toggle"></i>
+        </div>
+        <div class="header-center">
+            <i class="logo-icon fas fa-robot"></i>
+            <span class="logo">WandGPT</span>
+        </div>
+        <div class="header-right">
+            <button class="login-btn">Login</button>
+        </div>
+    </header>
+
+    <main class="chat-container" id="chat-container">
+        <!-- Messages will be added here dynamically -->
+        <div>
+            <div class="message ai-message">
+                <div class="streaming-text">Hello! I'm WandGPT, your advanced AI assistant. How can I help you today?</div>
+            </div>
+            <div class="message-actions visible">
+                <button class="action-btn" title="Copy"><i class="far fa-copy"></i></button>
+                <button class="action-btn" title="Like"><i class="far fa-thumbs-up"></i></button>
+                <button class="action-btn" title="Dislike"><i class="far fa-thumbs-down"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <div class="glow-wrapper">
+        <div class="glow-border"><div class="glow-bg"></div></div>
+        <div class="input-container" id="input-container">
+            <div class="file-preview" id="file-preview">
+                <img id="file-thumbnail" src="" alt="File thumbnail">
+                <div class="file-name" id="file-name"></div>
+                <button class="cancel-file" id="cancel-file">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="input-area">
+                <textarea class="prompt-input" id="prompt-input" placeholder="Message WandGPT..." rows="1"></textarea>
+            </div>
+            <div class="controls">
+                <div class="control-left">
+                    <button class="control-btn" id="attach-btn" title="Attach file">
+                        <i class="fas fa-paperclip"></i>
+                        <span class="hide-on-mobile">Attach</span>
+                    </button>
+                    <button class="control-btn" id="search-btn" title="Search web">
+                        <i class="fas fa-globe"></i>
+                        <span class="hide-on-mobile">Search</span>
+                    </button>
+                    <button class="control-btn" id="reason-btn" title="Reasoning mode">
+                        <i class="fas fa-lightbulb"></i>
+                        <span class="hide-on-mobile">Reason</span>
+                    </button>
+                </div>
+                <div class="control-right">
+                    <button class="send-btn" id="send-btn" title="Send message">
+                        <div class="send-glow"></div>
+                        <i class="fas fa-arrow-up arrow-icon" id="send-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">AI can make mistakes. Please verify important info.</div>
+
+<script src="script.js"></script>
+</body>
+</html>
