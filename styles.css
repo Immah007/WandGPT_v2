@@ -112,6 +112,22 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(40, 40, 43, 0.3);
         }
+        .engine-label-holder{
+            width: 100%;
+            position: absolute;
+            top: 5.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .engine-label{
+            background: #00bfff;
+            padding: 2px 5px;
+            font-size: 12px;
+            color: #114;
+            border-radius: 5px;top: 5.3rem;
+            margin: 0 auto;
+               }
 
         /* Side Menu */
         .side-menu {
